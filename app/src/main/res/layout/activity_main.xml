@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:background = "@color/massage"
+            android:layout_gravity="bottom">
+
+            <ToggleButton
+                android:id="@+id/btn_start"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_toLeftOf="@+id/btn_stop"
+                android:background="@drawable/start_btn"
+                android:textOff=""
+                android:textOn="" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_stop"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:background="@drawable/stop_btn"
+                android:layout_alignParentRight="true"
+                />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
