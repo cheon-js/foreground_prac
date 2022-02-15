@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="310dp"
+    android:layout_height="64dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="71dp"
+        android:layout_height="64dp">
+
+        <ImageView
+            android:id="@+id/img_n"
+            android:layout_width="66dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:src="@drawable/nouhaus" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="111dp"
+        android:layout_height="64dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/notification_title"
+            style="@style/TextAppearance.Compat.Notification.Title"
+            android:layout_width="111dp"
+            android:layout_height="34dp"
+            android:text="안마 중 입니다." />
+
+        <ProgressBar
+            android:id="@+id/prog_ma"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:progress="25" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="126dp"
+        android:layout_height="64dp">
+
+        <ImageButton
+            android:id="@+id/btn_start2"
+            android:layout_width="67dp"
+            android:layout_height="wrap_content"
+            android:contentDescription=""
+            android:src="@drawable/start_btn2" />
+
+        <ImageButton
+            android:id="@+id/btn_stop2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription=""
+            android:src="@drawable/stop_btn2" />
+    </LinearLayout>
+</LinearLayout>

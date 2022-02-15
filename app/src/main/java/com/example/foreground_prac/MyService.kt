@@ -1,17 +1,18 @@
 package com.example.foreground_prac
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.app.Service
+import android.app.*
 import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.IBinder
 import android.util.Log
+import android.widget.RemoteViews
 import androidx.core.app.NotificationCompat
+import java.lang.UnsupportedOperationException
 
 class MyService : Service() {
+
+
 
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
@@ -29,15 +30,17 @@ class MyService : Service() {
     }
 
     private fun createNotification(){
+        val notificationLayout = RemoteViews(packageName, R.layout.custom_noti)
         val builder = NotificationCompat.Builder(this, "default")
-            .setSmallIcon(R.mipmap.ic_launcher)
-            .setContentTitle("Foreground 테스트")
-            .setContentText("foreground 테스트")
-        builder.color = Color.RED
+            .setSmallIcon(R.drawable.nouhaus)
+            .setStyle(NotificationCompat.DecoratedCustomViewStyle())
+            .setCustomContentView(notificationLayout)
+        builder.color = Color.BLACK
         val notificationIntent = Intent(this, MainActivity::class.java)
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_SINGLE_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0)
         builder.setContentIntent(pendingIntent) // 알림 클릭시 이동
+        notificationLayout.setOnClickPendingIntent(R.id.btn_start2, pendingIntent)
 
         val notificationManager = this.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
